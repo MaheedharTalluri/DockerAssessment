@@ -1,10 +1,12 @@
 #Pull alpine version of nodejs.
-FROM 15.3.0-alpine3.10
+FROM node
 #Copy the hello.js file into the container.
 COPY hello.js .
 #Expose 8080 inside the container.
 EXPOSE 8080
 #Make the hello.js executable
 RUN chmod +x hello.js
+#install forever to run hello.js in background as a process.
+
 #Run the file hello.js
-RUN ./hello.js
+ENTRYPOINT ["./hello.js"]
