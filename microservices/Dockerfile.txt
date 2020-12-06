@@ -9,4 +9,4 @@ RUN chmod +x hello.js
 #install forever to run hello.js in background as a process.
 RUN npm install -g forever
 #Run the file hello.js
-ENTRYPOINT ["forever" "start hello.js"] 
+RUN forever start hello.js 
